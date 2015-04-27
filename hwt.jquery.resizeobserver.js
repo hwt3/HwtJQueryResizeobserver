@@ -1,24 +1,30 @@
 /*
- * HWT jQuery resizeObserver v0.0.1
+ * HWT jQuery resizeObserver v0.0.2
  *
  * Copyright 2015, Heiko Westermann (hwt)
  * mailto: hwt3@gmx.de
  *
- * Use resizeObserver(functionName); in your document ready function to use the resize observer.
+ * Write
+ * resizeObserver(function() {
+ * 	functionName();
+ * }); 
+ * in your document ready function to use the resize observer.
  */
 
-function resizeObserver(resizeFunction=null, resizeRefreshTime=200) {
-	var lastWindowWidth, resizeDelay;
-	lastWindowWidth = $(window).width();
+function resizeObserver(resizeCallback=function() {}, resizeRefreshTime=200) {
+	"use strict";
 	
-	resizeHandler= function () {
+	var resizeDelay, resizeHandler;
+	var lastWindowWidth = jQuery(window).width();
+	
+	resizeHandler = function() {
 		if (jQuery(window).width() !== lastWindowWidth) {
 			window.clearTimeout(resizeDelay);
 			resizeDelay = window.setTimeout(function () {
 				lastWindowWidth = jQuery(window).width();
-				resizeFunction();
+				resizeCallback.call(this);
 			}, resizeRefreshTime);
 		}
 	};
-	$(window).resize(resizeHandler);
+	jQuery(window).resize(resizeHandler);
 };
