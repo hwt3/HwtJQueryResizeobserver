@@ -1,0 +1,14 @@
+2015-06-02 Heiko Westermann <hwt3@gmx.de>
+	* Version v0.0.3
+	* Corrected parameter initialization.
+    * Code cleanup.
+    * Added changelog.
+    
+2015-04-27 Heiko Westermann <hwt3@gmx.de>
+	* Version v0.0.2
+	* Changed single resize function paramter to callback.
+	* Code cleanup.
+
+2015-04-27 Heiko Westermann <hwt3@gmx.de>
+	* Version v0.0.1
+	* Initial version
