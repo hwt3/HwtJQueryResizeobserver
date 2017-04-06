@@ -1,7 +1,7 @@
 /*
- * HWT jQuery resizeObserver v0.0.3
+ * HWT jQuery resizeObserver v0.0.4
  *
- * Copyright 2015, Heiko Westermann (hwt)
+ * Copyright 2015-2017, Heiko Westermann (hwt)
  * mailto: hwt3@gmx.de
  *
  * Write
