@@ -24,9 +24,8 @@ function resizeObserver(resizeCallback, resizeRefreshTime, resizeOffsetX) {
 
 	resizeHandler = function () {
         newWindowWidth = jQuery(window).width();
-        console.log(Math.abs(newWindowWidth-lastWindowWidth));
+
 		if ( (newWindowWidth !== lastWindowWidth) && (Math.abs(newWindowWidth-lastWindowWidth) > resizeOffsetX) )  {
-            console.log('executed');
 			window.clearTimeout(resizeDelay);
 			resizeDelay = window.setTimeout(function () {
 				lastWindowWidth = newWindowWidth;
