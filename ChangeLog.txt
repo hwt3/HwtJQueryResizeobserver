@@ -1,3 +1,12 @@
+2017-04-07 Heiko Westermann <hwt3@gmx.de>
+	* Version v0.0.4.
+    * Feature: Added width offset.
+	* Documentation: Added demo.
+    * Documentation: Updated README
+    * Task: Added minified script
+	* Task: Restructured repository
+    * Task: Added license
+
 2015-06-02 Heiko Westermann <hwt3@gmx.de>
 	* Version v0.0.3
 	* Corrected parameter initialization.
