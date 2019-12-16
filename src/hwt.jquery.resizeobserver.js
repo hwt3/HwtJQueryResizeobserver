@@ -12,27 +12,27 @@
  */
 
 function resizeObserver(resizeCallback, resizeRefreshTime, resizeOffsetX) {
-	"use strict";
+    "use strict";
 
     resizeCallback = resizeCallback || function () {};
     resizeRefreshTime = resizeRefreshTime || 200;
     resizeOffsetX = resizeOffsetX || 5;
 
-	var resizeDelay, resizeHandler;
-	var lastWindowWidth = jQuery(window).width();
+    var resizeDelay, resizeHandler;
+    var lastWindowWidth = jQuery(window).width();
     var newWindowWidth;
 
-	resizeHandler = function () {
+    resizeHandler = function () {
         newWindowWidth = jQuery(window).width();
 
-		if ( (newWindowWidth !== lastWindowWidth) && (Math.abs(newWindowWidth-lastWindowWidth) > resizeOffsetX) )  {
-			window.clearTimeout(resizeDelay);
-			resizeDelay = window.setTimeout(function () {
-				lastWindowWidth = newWindowWidth;
-				resizeCallback.call(this);
-			}, resizeRefreshTime);
-		}
-	};
+        if ( (newWindowWidth !== lastWindowWidth) && (Math.abs(newWindowWidth-lastWindowWidth) > resizeOffsetX) )  {
+            window.clearTimeout(resizeDelay);
+            resizeDelay = window.setTimeout(function () {
+                lastWindowWidth = newWindowWidth;
+                resizeCallback.call(this);
+            }, resizeRefreshTime);
+        }
+    };
 
-	jQuery(window).resize(resizeHandler);
+    jQuery(window).resize(resizeHandler);
 }
